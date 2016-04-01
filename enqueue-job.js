@@ -9,7 +9,7 @@ const queue = kue.createQueue({
   }
 });
 
-queue.create('get-two').attempts(5).save((err) => {
+queue.create('get-two').attempts(2).save((err) => {
   console.log(err);
   process.exit(0);
 });

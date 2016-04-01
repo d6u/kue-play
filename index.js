@@ -17,10 +17,10 @@ queue.process('get-two', 1, function (job, done) {
   }, 5000);
 });
 
-// process.once('SIGINT', function () {
-//   console.log('receiving SIGINT');
-//   queue.shutdown(1, function (err) {
-//     console.log(`Kue shutdown: ${err}`);
-//     process.exit(0);
-//   });
-// });
+process.once('SIGINT', function () {
+  console.log('receiving SIGINT');
+  queue.shutdown(1, function (err) {
+    console.log(`Kue shutdown: ${err}`);
+    process.exit(0);
+  });
+});
