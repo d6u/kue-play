@@ -1,0 +1,4 @@
+redis:
+  image: redis:2.8.12
+  ports:
+    - '19999:6379'
